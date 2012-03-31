@@ -5,27 +5,31 @@
 
 Gem::Specification.new do |s|
   s.name = "sorte"
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jan Gorman"]
   s.date = "2012-03-31"
   s.description = "Sort your mp3s into folders"
   s.email = "gorman.jan@gmail.com"
+  s.executables = ["sorte"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.md",
+    "README.markdown",
     "README.rdoc"
   ]
   s.files = [
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
-    "README.md",
+    "README.markdown",
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "lib/sorte.rb"
+    "bin/sorte",
+    "lib/sorte.rb",
+    "pkg/sorte-0.1.0.gem",
+    "sorte.gemspec"
   ]
   s.homepage = "http://github.com/JanGorman/Sorte"
   s.licenses = ["MIT"]
