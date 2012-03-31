@@ -29,7 +29,7 @@ if opts[:dry]
   puts "\n"
 end
 
-Dir.glob("#{opts[:dir]}/*.mp3") do |f|
+Dir.glob("#{opts[:dir]}/*.{mp,MP}3") do |f|
   begin
     Mp3Info.open(f) do |info|
       dir = "#{opts[:dir]}/#{info.tag.artist}/#{info.tag.album}"
