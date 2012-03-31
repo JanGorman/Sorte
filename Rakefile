@@ -20,6 +20,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Sort your mp3s into folders}
   gem.email = "gorman.jan@gmail.com"
   gem.authors = ["Jan Gorman"]
+  gem.executables = ["sorte"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
