@@ -13,7 +13,7 @@ To get started
     
 And that's all there is to it really. Does what it says on the packaging.
 
-Borgin legal stuff
+Boring legal stuff
 ------------------
 
 See LICENSE.txt file
