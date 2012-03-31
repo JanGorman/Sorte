@@ -21,6 +21,7 @@ Jeweler::Tasks.new do |gem|
   gem.email = "gorman.jan@gmail.com"
   gem.authors = ["Jan Gorman"]
   gem.executables = ["sorte"]
+  gem.version = Jeweler::Version::STRING
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

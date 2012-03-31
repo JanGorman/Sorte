@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby-local-exec
-
 require "trollop"
 require "mp3info"
 
