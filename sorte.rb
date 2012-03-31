@@ -18,24 +18,33 @@ END
 end
 
 def make_dir(dir)
-  FileUtils.mkdir_p dir unless File.exists? dir
+  FileUtils.mkdir_p(dir) unless File.exists?(dir)
+end
+
+if opts[:dry]
+  puts "\n"
+  puts "#" * 15
+  puts "Dry Run".center 15
+  puts "#" * 15
+  puts "\n"
 end
 
 Dir.glob("#{opts[:dir]}/*.mp3") do |f|
-  Mp3Info.open(f) do |info|
-    dir = "#{opts[:dir]}/#{info.tag.artist}/#{info.tag.album}"
-    if !opts[:dry]
-      if opts[:verbose]
+  begin
+    Mp3Info.open(f) do |info|
+      dir = "#{opts[:dir]}/#{info.tag.artist}/#{info.tag.album}"
+      if !opts[:dry]
+        if opts[:verbose]
+          puts "Create directory #{dir}"
+        end
+        make_dir dir
+        FileUtils.mv f, "#{dir}/#{File.basename f}", :verbose => opts[:verbose]
+      else
         puts "Create directory #{dir}"
-      end
-      make_dir dir
-      if opts[:verbose]
         puts "Move file #{f} to directory #{dir}"
       end
-      File.rename(f, "#{dir}/#{f}")
-    else
-      puts "Create directory #{dir}"
-      puts "Move file #{f} to directory #{dir}"
     end
+  rescue Mp3InfoError => e
+    # Ignore `bad VBR header (Mp3InfoError)`
   end
 end
