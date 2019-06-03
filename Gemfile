@@ -10,6 +10,6 @@ group :development do
   gem "rdoc", "~> 6.1"
   gem "bundler", "~> 1.1.3"
   gem "jeweler", "~> 1.8.3"
-  gem "trollop", "~> 1.16.2"
+  gem "trollop", "~> 2.9.9"
   gem "ruby-mp3info", "~> 0.8"
 end
